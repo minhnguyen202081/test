@@ -14,9 +14,12 @@ namespace TaskManagerApp
 {
     public partial class ManageUser : Form
     {
-        public ManageUser()
+        private readonly AppDbContext _context;
+        public ManageUser(AppDbContext context)
         {
+          
             InitializeComponent();
+            _context = context;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -32,19 +35,18 @@ namespace TaskManagerApp
 
             try
             {
-                using (var context = new AppDbContext())
-                {
+                
                     var user = new User
                     {
                         Username = username,
                         Email = email
                     };
 
-                    context.Users.Add(user);
-                    context.SaveChanges();
+                    _context.Users.Add(user);
+                    _context.SaveChanges();
                     MessageBox.Show("Update successfully!");
                     this.Close();
-                }
+                
             }
             catch (Exception ex)
             {

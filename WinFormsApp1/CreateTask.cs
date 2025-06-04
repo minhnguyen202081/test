@@ -13,22 +13,22 @@ namespace TaskManagerApp
 {
     public partial class CreateTask : Form
     {
-        public CreateTask()
+        private readonly AppDbContext _context;
+
+        public CreateTask(AppDbContext context)
         {
             InitializeComponent();
+            _context = context;
             LoadUsers();   
            
         }
 
         private void LoadUsers()
         {
-            using (var context = new AppDbContext())
-            {
-                var users = context.Users.ToList();
-                comboUser.DataSource = users;
-                comboUser.DisplayMember = "Username";
-                comboUser.ValueMember = "UserId";
-            }
+            var users = _context.Users.ToList();
+            comboUser.DataSource = users;
+            comboUser.DisplayMember = "Username";
+            comboUser.ValueMember = "UserId";
         }
 
      
@@ -74,8 +74,7 @@ namespace TaskManagerApp
 
             try
             {
-                using (var context = new AppDbContext())
-                {
+               
                     var task = new Models.Task
                     {
                         Title = title,
@@ -86,12 +85,12 @@ namespace TaskManagerApp
                         UserId = userId
                     };
 
-                    context.Tasks.Add(task);
-                    context.SaveChanges();
+                    _context.Tasks.Add(task);
+                    _context.SaveChanges();
 
                     MessageBox.Show("Save Successfully!");
                     this.Close();
-                }
+                
             }
             catch (Exception ex)
             {

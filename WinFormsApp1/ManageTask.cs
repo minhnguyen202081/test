@@ -17,21 +17,22 @@ namespace TaskManagerApp
 {
     public partial class ManageTask : Form
     {
-        public ManageTask()
+        private readonly AppDbContext _context;
+        public ManageTask(AppDbContext context)
         {
             InitializeComponent();
+            _context = context;
             LoadUsers();
 
         }
         private void LoadUsers()
         {
-            using (var context = new AppDbContext())
-            {
-                var users = context.Users.ToList();
+            
+                var users = _context.Users.ToList();
                 comboUser.DataSource = users;
                 comboUser.DisplayMember = "Username";
                 comboUser.ValueMember = "UserId";
-            }
+            
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -44,9 +45,8 @@ namespace TaskManagerApp
 
         private void LoadTasks(int? userId = null, string status = null, string priority = null)
         {
-            using (var context = new AppDbContext())
-            {
-                var query = context.Tasks.Include(t => t.User).AsQueryable();
+           
+                var query = _context.Tasks.Include(t => t.User).AsQueryable();
 
                 if (userId.HasValue)
                     query = query.Where(t => t.UserId == userId.Value);
@@ -77,7 +77,7 @@ namespace TaskManagerApp
 
                 AddActionButtons();
 
-            }
+            
         }
         private void AddActionButtons()
         {
@@ -117,22 +117,21 @@ namespace TaskManagerApp
                 var confirm = MessageBox.Show("Are you sure you want to delete this task?", "Confirm", MessageBoxButtons.YesNo);
                 if (confirm == DialogResult.Yes)
                 {
-                    using (var context = new AppDbContext())
-                    {
-                        var task = context.Tasks.Find(taskId);
+                    
+                        var task = _context.Tasks.Find(taskId);
                         if (task != null)
                         {
-                            context.Tasks.Remove(task);
-                            context.SaveChanges();
+                            _context.Tasks.Remove(task);
+                            _context.SaveChanges();
                             LoadTasks();
                         }
-                    }
+                   
                 }
             }
             else if (columnName == "Detail")
             {
 
-                var detailForm = new DetailTask(taskId);
+                var detailForm = new DetailTask(_context,taskId);
                 detailForm.ShowDialog();
 
                 LoadTasks();
@@ -142,16 +141,15 @@ namespace TaskManagerApp
 
         private void btnCreateNew_Click(object sender, EventArgs e)
         {
-            CreateTask createTask = new CreateTask();
+            CreateTask createTask = new CreateTask(_context);
             createTask.ShowDialog();
             LoadTasks();
         }
 
         private void btnStatus_Click(object sender, EventArgs e)
         {
-            using (var context = new AppDbContext())
-            {
-                var data = context.Tasks
+           
+                var data = _context.Tasks
                     .GroupBy(t => new { t.User.Username, t.Status })
                     .Select(g => new
                     {
@@ -161,14 +159,13 @@ namespace TaskManagerApp
                     }).ToList();
 
                 ExportToExcel(data, "UserTaskStatusReport.xlsx");
-            }
+            
         }
 
         private void btnTopDone_Click(object sender, EventArgs e)
         {
-            using (var context = new AppDbContext())
-            {
-                var data = context.Tasks
+         
+                var data = _context.Tasks
                     .Where(t => t.Status == "done")
                     .GroupBy(t => t.User.Username)
                     .Select(g => new
@@ -181,15 +178,14 @@ namespace TaskManagerApp
                     .ToList();
 
                 ExportToExcel(data, "TopUsersDoneTasks.xlsx");
-            }
+         
         }
 
         private void btnLateTask_Click(object sender, EventArgs e)
         {
             var today = DateTime.Today;
-            using (var context = new AppDbContext())
-            {
-                var data = context.Tasks
+
+            var data = _context.Tasks
                     .Where(t => t.DueDate < today && t.Status != "done")
                     .Select(t => new
                     {
@@ -202,15 +198,15 @@ namespace TaskManagerApp
                     }).ToList();
 
                 ExportToExcel(data, "LateTasksReport.xlsx");
-            }
+           
         }
 
         private void ExportToExcel<T>(List<T> data, string fileName)
         {
             OfficeOpenXml.ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
-
             using (var package = new OfficeOpenXml.ExcelPackage())
             {
+
                 var worksheet = package.Workbook.Worksheets.Add("Report");
                 worksheet.Cells["A1"].LoadFromCollection(data, true);
                 var saveFileDialog = new SaveFileDialog

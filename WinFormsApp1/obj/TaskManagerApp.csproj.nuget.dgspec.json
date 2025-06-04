@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\InternetDownload\\TaskManagerApp\\WinFormsApp1\\TaskManagerApp.csproj": {}
+    "D:\\InternetDownload\\test\\testt\\test\\WinFormsApp1\\TaskManagerApp.csproj": {}
   },
   "projects": {
-    "D:\\InternetDownload\\TaskManagerApp\\WinFormsApp1\\TaskManagerApp.csproj": {
+    "D:\\InternetDownload\\test\\testt\\test\\WinFormsApp1\\TaskManagerApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\InternetDownload\\TaskManagerApp\\WinFormsApp1\\TaskManagerApp.csproj",
+        "projectUniqueName": "D:\\InternetDownload\\test\\testt\\test\\WinFormsApp1\\TaskManagerApp.csproj",
         "projectName": "TaskManagerApp",
-        "projectPath": "D:\\InternetDownload\\TaskManagerApp\\WinFormsApp1\\TaskManagerApp.csproj",
+        "projectPath": "D:\\InternetDownload\\test\\testt\\test\\WinFormsApp1\\TaskManagerApp.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\InternetDownload\\TaskManagerApp\\WinFormsApp1\\obj\\",
+        "outputPath": "D:\\InternetDownload\\test\\testt\\test\\WinFormsApp1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -67,6 +67,28 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.5, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.16, )",
+              "autoReferenced": true
             }
           },
           "imports": [
@@ -80,6 +102,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[8.0.16, 8.0.16]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[8.0.16, 8.0.16]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[8.0.16, 8.0.16]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -89,6 +125,11 @@
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
         }
       }
     }

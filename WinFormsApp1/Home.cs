@@ -7,19 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using TaskManagerApp.Data;
 namespace TaskManagerApp
 {
     public partial class Home : Form
     {
-        public Home()
+        private readonly AppDbContext _context;
+        public Home(AppDbContext context)
         {
             InitializeComponent();
+            _context = context;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ManageUser manageUserForm = new ManageUser();
+            ManageUser manageUserForm = new ManageUser(_context);
             manageUserForm.Show();
         }
 
@@ -30,7 +32,7 @@ namespace TaskManagerApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ManageTask manageTask= new ManageTask();
+            ManageTask manageTask= new ManageTask(_context);
             manageTask.Show();
         }
     }

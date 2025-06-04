@@ -15,18 +15,20 @@ namespace TaskManagerApp
     public partial class DetailTask : Form
     {
         private int _taskId;
-        public DetailTask(int taskId)
+        private readonly AppDbContext _context;
+
+        public DetailTask(AppDbContext context,int taskId)
         {
             InitializeComponent();
             _taskId = taskId;
+            _context = context;
             LoadReadOnly();
         }
 
         private void DetailTask_Load(object sender, EventArgs e)
         {
-            using (var context = new AppDbContext())
-            {
-                var task = context.Tasks
+            
+                var task = _context.Tasks
                     .Include(t => t.User)
                     .FirstOrDefault(t => t.TaskId == _taskId);
 
@@ -44,7 +46,7 @@ namespace TaskManagerApp
                     MessageBox.Show("Could not found the task!!!");
                     Close();
                 }
-            }
+           
         }
         private void LoadReadOnly()
         {
@@ -60,13 +62,12 @@ namespace TaskManagerApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (var context = new AppDbContext())
-            {
-                var task = context.Tasks.FirstOrDefault(t => t.TaskId == _taskId);
+            
+                var task = _context.Tasks.FirstOrDefault(t => t.TaskId == _taskId);
                 if (task != null)
                 {
                     task.Status = ComboStatus.SelectedItem.ToString();
-                    context.SaveChanges();
+                    _context.SaveChanges();
                     MessageBox.Show("Update successfully!");
                     this.Close();
                 }
@@ -74,7 +75,7 @@ namespace TaskManagerApp
                 {
                     MessageBox.Show("Could not found the task");
                 }
-            }
+           
         }
 
         private void btnClose_Click(object sender, EventArgs e)

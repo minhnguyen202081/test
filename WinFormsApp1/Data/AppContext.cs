@@ -8,9 +8,8 @@ namespace TaskManagerApp.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Models.Task> Tasks { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-            options.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=task_db;User Id=sa;Password=123456;TrustServerCertificate=True;");
         }
     }
 }
