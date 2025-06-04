@@ -1,0 +1,16 @@
+D:\InternetDownload\test\TaskManagerApp\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.exe
+D:\InternetDownload\test\TaskManagerApp\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.deps.json
+D:\InternetDownload\test\TaskManagerApp\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.runtimeconfig.json
+D:\InternetDownload\test\TaskManagerApp\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.dll
+D:\InternetDownload\test\TaskManagerApp\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.pdb
+D:\InternetDownload\test\TaskManagerApp\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.Form1.resources
+D:\InternetDownload\test\TaskManagerApp\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.csproj.GenerateResource.cache
+D:\InternetDownload\test\TaskManagerApp\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.GeneratedMSBuildEditorConfig.editorconfig
+D:\InternetDownload\test\TaskManagerApp\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.AssemblyInfoInputs.cache
+D:\InternetDownload\test\TaskManagerApp\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.AssemblyInfo.cs
+D:\InternetDownload\test\TaskManagerApp\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.csproj.CoreCompileInputs.cache
+D:\InternetDownload\test\TaskManagerApp\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.dll
+D:\InternetDownload\test\TaskManagerApp\WinFormsApp1\obj\Debug\net8.0-windows\refint\WinFormsApp1.dll
+D:\InternetDownload\test\TaskManagerApp\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.pdb
+D:\InternetDownload\test\TaskManagerApp\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.genruntimeconfig.cache
+D:\InternetDownload\test\TaskManagerApp\WinFormsApp1\obj\Debug\net8.0-windows\ref\WinFormsApp1.dll
