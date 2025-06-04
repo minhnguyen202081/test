@@ -19,8 +19,11 @@ namespace TaskManagerApp
         {
             InitializeComponent();
             _context = context;
-            LoadUsers();   
-           
+            LoadUsers();
+            comboUser.DropDownStyle = ComboBoxStyle.DropDownList;
+            ComboStatus.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboPriority.DropDownStyle = ComboBoxStyle.DropDownList;
+
         }
 
         private void LoadUsers()
