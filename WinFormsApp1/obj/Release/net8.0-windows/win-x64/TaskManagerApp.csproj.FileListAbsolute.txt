@@ -603,3 +603,4 @@ D:\InternetDownload\test\testt\test\WinFormsApp1\obj\Release\net8.0-windows\win-
 D:\InternetDownload\test\testt\test\WinFormsApp1\obj\Release\net8.0-windows\win-x64\TaskManagerApp.genruntimeconfig.cache
 D:\InternetDownload\test\testt\test\WinFormsApp1\obj\Release\net8.0-windows\win-x64\ref\TaskManagerApp.dll
 D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Release\net8.0-windows\win-x64\Microsoft.Extensions.Configuration.Binder.dll
+D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Release\net8.0-windows\win-x64\appsettings.json

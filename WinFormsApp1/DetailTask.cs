@@ -9,44 +9,42 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaskManagerApp.Data;
-
+using TaskManagerApp.Services;
 namespace TaskManagerApp
 {
     public partial class DetailTask : Form
     {
         private int _taskId;
         private readonly AppDbContext _context;
-
-        public DetailTask(AppDbContext context,int taskId)
+        private readonly TaskService _taskService;
+        public DetailTask(AppDbContext context,int taskId, TaskService taskService)
         {
             InitializeComponent();
             _taskId = taskId;
+            _taskService = taskService;
             _context = context;
             LoadReadOnly();
         }
 
         private void DetailTask_Load(object sender, EventArgs e)
         {
-            
-                var task = _context.Tasks
-                    .Include(t => t.User)
-                    .FirstOrDefault(t => t.TaskId == _taskId);
+            var task = _taskService.GetTaskDetailById(_taskId);
 
-                if (task != null)
-                {
-                    txtTitle.Text = task.Title;
-                    txtDescription.Text = task.Description;
-                    dateTimePicker1.Value = task.DueDate ?? DateTime.Today;
-                    ComboStatus.SelectedItem = task.Status;
-                    comboPriority.SelectedItem = task.Priority;
+            if (task != null)
+            {
+                txtTitle.Text = task.Title;
+                txtDescription.Text = task.Description;
+                dateTimePicker1.Value = task.DueDate ?? DateTime.Today;
+                ComboStatus.SelectedItem = task.Status;
+                comboPriority.SelectedItem = task.Priority;
+                comboUser.Text = task.User?.Username; 
+            }
+            else
+            {
+                MessageBox.Show("Could not find the task!!!");
+                Close();
+            }
 
-                }
-                else
-                {
-                    MessageBox.Show("Could not found the task!!!");
-                    Close();
-                }
-           
         }
         private void LoadReadOnly()
         {
@@ -62,20 +60,25 @@ namespace TaskManagerApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-                var task = _context.Tasks.FirstOrDefault(t => t.TaskId == _taskId);
-                if (task != null)
-                {
-                    task.Status = ComboStatus.SelectedItem.ToString();
-                    _context.SaveChanges();
-                    MessageBox.Show("Update successfully!");
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Could not found the task");
-                }
-           
+
+            string status = ComboStatus.SelectedItem?.ToString();
+            if (string.IsNullOrEmpty(status))
+            {
+                MessageBox.Show("Please select a status");
+                return;
+            }
+
+            bool success = _taskService.UpdateTaskStatus(_taskId, status);
+            if (success)
+            {
+                MessageBox.Show("Update successfully!");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Could not find the task");
+            }
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)

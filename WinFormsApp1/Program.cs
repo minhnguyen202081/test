@@ -35,8 +35,8 @@ namespace WinFormsApp1
             using (var scope = serviceProvider.CreateScope())
             {
                 var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+              
 
-               
                 Application.Run(new Home(context));
             }
          

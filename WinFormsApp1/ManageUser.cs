@@ -9,17 +9,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaskManagerApp.Data;
 using TaskManagerApp.Models;
+using TaskManagerApp.Services;
 
 namespace TaskManagerApp
 {
     public partial class ManageUser : Form
     {
         private readonly AppDbContext _context;
-        public ManageUser(AppDbContext context)
+        private readonly UserService _userService;
+        public ManageUser(AppDbContext context, UserService userService)
         {
           
             InitializeComponent();
             _context = context;
+            _userService = userService;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -32,19 +35,12 @@ namespace TaskManagerApp
                 MessageBox.Show("Please field all required fields.");
                 return;
             }
-
+           
             try
             {
-                
-                    var user = new User
-                    {
-                        Username = username,
-                        Email = email
-                    };
 
-                    _context.Users.Add(user);
-                    _context.SaveChanges();
-                    MessageBox.Show("Update successfully!");
+                _userService.AddUser(username, email);
+                MessageBox.Show("Update successfully!");
                     this.Close();
                 
             }

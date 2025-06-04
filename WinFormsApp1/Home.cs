@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaskManagerApp.Data;
+using TaskManagerApp.Services;
 namespace TaskManagerApp
 {
     public partial class Home : Form
@@ -21,7 +22,8 @@ namespace TaskManagerApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ManageUser manageUserForm = new ManageUser(_context);
+            var userService = new UserService(_context);
+            ManageUser manageUserForm = new ManageUser(_context, userService);
             manageUserForm.Show();
         }
 
@@ -32,7 +34,8 @@ namespace TaskManagerApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ManageTask manageTask= new ManageTask(_context);
+            var taskService = new TaskService(_context);
+            ManageTask manageTask= new ManageTask(_context, taskService);
             manageTask.Show();
         }
     }

@@ -8,17 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaskManagerApp.Data;
-
+using TaskManagerApp.Services;
 namespace TaskManagerApp
 {
     public partial class CreateTask : Form
     {
         private readonly AppDbContext _context;
-
-        public CreateTask(AppDbContext context)
+        private readonly TaskService _taskService;
+        public CreateTask(AppDbContext context, TaskService taskService)
         {
             InitializeComponent();
             _context = context;
+            _taskService = taskService;
             LoadUsers();
             comboUser.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboStatus.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -77,21 +78,10 @@ namespace TaskManagerApp
 
             try
             {
-               
-                    var task = new Models.Task
-                    {
-                        Title = title,
-                        Description = desc,
-                        DueDate = dueDate,
-                        Status = status,
-                        Priority = priority,
-                        UserId = userId
-                    };
 
-                    _context.Tasks.Add(task);
-                    _context.SaveChanges();
+                _taskService.AddTask(title, desc, dueDate, status, priority, userId);
 
-                    MessageBox.Show("Save Successfully!");
+                MessageBox.Show("Save Successfully!");
                     this.Close();
                 
             }

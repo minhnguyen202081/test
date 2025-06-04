@@ -1,4 +1,5 @@
 D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Release\net8.0-windows\win-x64\publish\TaskManagerApp.pdb
+D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Release\net8.0-windows\win-x64\publish\appsettings.json
 D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Release\net8.0-windows\win-x64\publish\D3DCompiler_47_cor3.dll
 D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Release\net8.0-windows\win-x64\publish\PenImc_cor3.dll
 D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Release\net8.0-windows\win-x64\publish\PresentationNative_cor3.dll

@@ -153,6 +153,7 @@ D:\InternetDownload\test\TaskManagerApp\WinFormsApp1\bin\Debug\net8.0-windows\Mi
 D:\InternetDownload\test\TaskManagerApp\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
 D:\InternetDownload\test\TaskManagerApp\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IO.RecyclableMemoryStream.dll
 D:\InternetDownload\test\TaskManagerApp\WinFormsApp1\bin\Debug\net8.0-windows\System.Xml.XPath.XmlDocument.dll
+D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Debug\net8.0-windows\appsettings.json
 D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Debug\net8.0-windows\TaskManagerApp.exe
 D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Debug\net8.0-windows\TaskManagerApp.deps.json
 D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Debug\net8.0-windows\TaskManagerApp.runtimeconfig.json
@@ -180,6 +181,7 @@ D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Debug\net8.0-windows\Micros
 D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
 D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.dll
 D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Binder.dll
 D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
 D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Json.dll
 D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll

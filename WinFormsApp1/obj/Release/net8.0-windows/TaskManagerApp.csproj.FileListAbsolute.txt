@@ -10,6 +10,7 @@ D:\InternetDownload\test\testt\test\WinFormsApp1\obj\Release\net8.0-windows\Task
 D:\InternetDownload\test\testt\test\WinFormsApp1\obj\Release\net8.0-windows\TaskManagerApp.AssemblyInfo.cs
 D:\InternetDownload\test\testt\test\WinFormsApp1\obj\Release\net8.0-windows\TaskManagerApp.csproj.CoreCompileInputs.cache
 D:\InternetDownload\test\testt\test\WinFormsApp1\obj\Release\net8.0-windows\TaskManagerApp.sourcelink.json
+D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Release\net8.0-windows\appsettings.json
 D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Release\net8.0-windows\TaskManagerApp.exe
 D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Release\net8.0-windows\TaskManagerApp.deps.json
 D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Release\net8.0-windows\TaskManagerApp.runtimeconfig.json
@@ -37,6 +38,7 @@ D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Release\net8.0-windows\Micr
 D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Release\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
 D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Release\net8.0-windows\Microsoft.Extensions.Configuration.dll
 D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Release\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Release\net8.0-windows\Microsoft.Extensions.Configuration.Binder.dll
 D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Release\net8.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
 D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Release\net8.0-windows\Microsoft.Extensions.Configuration.Json.dll
 D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Release\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
@@ -154,5 +156,3 @@ D:\InternetDownload\test\testt\test\WinFormsApp1\obj\Release\net8.0-windows\refi
 D:\InternetDownload\test\testt\test\WinFormsApp1\obj\Release\net8.0-windows\TaskManagerApp.pdb
 D:\InternetDownload\test\testt\test\WinFormsApp1\obj\Release\net8.0-windows\TaskManagerApp.genruntimeconfig.cache
 D:\InternetDownload\test\testt\test\WinFormsApp1\obj\Release\net8.0-windows\ref\TaskManagerApp.dll
-D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Release\net8.0-windows\Microsoft.Extensions.Configuration.Binder.dll
-D:\InternetDownload\test\testt\test\WinFormsApp1\bin\Release\net8.0-windows\appsettings.json
